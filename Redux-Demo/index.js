@@ -90,7 +90,7 @@ const rootReducer = combineReducers({
   iceCream: icecreamReducer,
 })
 
-const store = createStore(rootReducer);
+const store = createStore(educer);
 console.log("Initial State", store.getState());
 
 const unsubscribe = store.subscribe(() =>
