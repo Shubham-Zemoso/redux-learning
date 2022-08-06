@@ -49,11 +49,16 @@ const unsubscribe = store.subscribe(() =>
   console.log("pdate state", store.getState())
 );
 
-store.dispatch(orderCake());
-store.dispatch(restockCake(2));
-store.dispatch(restockCake(1));
+// store.dispatch(orderCake());
+// store.dispatch(restockCake(2));
+// store.dispatch(restockCake(1));
+
+const actions = bindActionCreators({ orderCake, restockCake }, store.dispatch);
+actions.orderCake();
+actions.orderCake();
+actions.restockCake(2);
 
 unsubscribe();
 
-store.dispatch(orderCake());
-console.log("current State", store.getState());
+// store.dispatch(orderCake());
+// console.log("current State", store.getState());
